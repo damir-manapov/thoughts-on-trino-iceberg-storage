@@ -6,3 +6,4 @@ Trino, iceberg storage
 * Option on whether to allow filters on virtual columns. Explicit notion on performance degradation
 * Functional columns (physically stored, updated only on create, update or explicit request), can participate in uniqueness
 * On partial updates, if some fields touch uniqueness indexes all other fields required to compute such index should be provided. It includes functional columns, if it participates in uniqueness all fields required to compute it should be provided
+* Masks on fields. How do we handle updates on app level? Masks should rely on roles. If the column is masked for the user it is forbidden to update such columns for him. Or maybe we should forbid modifications of entire table for such users for sake of simplicity
